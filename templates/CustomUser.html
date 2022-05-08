@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python Flask Jquery Ajax Autocomplete</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type=""text/css" href="{{ url_for('static', filename='main.css') }}" />
+  </head>
+
+  <body class="index-body">
+
+    <div class="index-results">
+	    <center>
+            <h1 id="name" class="text-uppercase">Hybrid Animes Recommender System</h1>
+	    </center>
+    </div>
+    <div class="index-results">
+	    <center>
+            <h3 id="create_custom_user" class="text-uppercase">Create Custom User</h3>
+	    </center>
+	  </div>
+
+    <div>
+        <center>
+            <!-- <h5 id="name">Enter Create Custom User</h5> -->
+            <form action="{{ url_for('custom_user_predict') }}" method="POST">
+                <textarea name="review_text" rows="10" cols="30" placeholder = "Enter Create Custom User
+                                                                                (eg. Anime_1 : 10 | Anime_2 : 9 and so on)"></textarea>>
+                <br>
+                <input id="enter_button" type="submit" value="Enter">
+            </form>
+        </center>
+    </div>
+
+    <div>
+      <center>
+        <form action="#" method="POST">
+          <input type="text" name="anime" id="anime_title_autocomplete" placeholder="Search Anime Title">
+          <script>
+            $(function() {
+                $.ajax({
+                  url: '{{ url_for("anime_autocomplete") }}'
+                }).done(function (data){
+                  $('#anime_title_autocomplete').autocomplete({
+                    source: data,
+                    minLength: 2
+                  });
+                });
+              });
+          </script>
+        </form>
+      </center>
+    </div>
+  </body>
+</html>

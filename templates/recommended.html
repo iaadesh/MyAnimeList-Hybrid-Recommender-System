@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type=""text/css" href="{{ url_for('static', filename='main.css') }}" />
+    </head>
+
+    <body class="rec-body">
+        <a href="{{ url_for('index') }}">
+            <abbr title="HOME">
+                <div class="rec-results">
+                    <center>
+                        <h1 id="name" class="text-uppercase">Hybrid Anime Recommender System</h1>
+                    </center>
+                </div>
+            </abbr>
+        </a>
+        <br>
+
+        <div class="results">
+            <h3 id="anime_recommended_to_user" class="text-uppercase">Anime Recommended to user :</h3>
+        </div>
+        <div class="anime-content">
+            {% for details in anime_dict.values() %}
+                <div class="imghvr">
+                    <centre>
+                        <img class="card-img-top cast-img" id="{{details[1]}}"  src="{{details[2]}}" style="width:100%">
+                    </centre>
+                    <div class="container">
+                        <h5 class="card-title">{{details[1]|title}}</h5>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <div class="results">
+            <h3 id="anime_recommended_to_user" class="text-uppercase">User Watched Anime :</h3>
+        </div>
+        <div class="anime-content">
+            {% for details in watched_anime_dict.values() %}
+                <div class="imghvr">
+                    <img class="card-img-top cast-img" id="{{details[1]}}" height="280"  src="{{details[2]}}">
+                    <div class="container">
+                        <h5 class="card-title">{{details[1]|title}}</h5>
+                        <h5 class="card-title">Rating : {{details[3]|title}}</h5>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>
