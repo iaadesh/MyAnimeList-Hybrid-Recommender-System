@@ -1,7 +1,7 @@
 # MyAnimeList-Hybrid-Recommender-System
 End to End implementation of Hybrid Anime Recommender System using Flask 
 
-## 1 Business Problem
+## 1. Business Problem
 
 
 ### 1.1 Problem Description
@@ -25,7 +25,7 @@ The model should have some form of Interpretability when predicting recommendati
 
 The model should have Strict Latency Constraint as it will be an interactive model.
 
-## 2 Machine Learning Problem
+## 2. Machine Learning Problem
 
 ### 2.1 Data Overview
 
@@ -60,5 +60,5 @@ The model should have some form of Interpretability when predicting recommendati
 
 Minimize the RMSE and Precision@10 value of each Content Based Filtering and Collaborative Filtering Model that will be combined to build Hybrid Recommendation System Model.
 
-## 3 Deployment Video
+## 3. Deployment Video
 https://www.youtube.com/watch?v=-lr8P0oduyA
