@@ -59,3 +59,6 @@ Precision@10 : We will be using Precision@10 metric to evaluate our model becaus
 The model should have some form of Interpretability when predicting recommendations to users because it helps us to understand model behaviour.
 
 Minimize the RMSE and Precision@10 value of each Content Based Filtering and Collaborative Filtering Model that will be combined to build Hybrid Recommendation System Model.
+
+## 3 Deployment Video
+https://www.youtube.com/watch?v=-lr8P0oduyA
